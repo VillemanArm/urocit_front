@@ -68,7 +68,7 @@ const handleChangePage = (newPageValue: number) => {
       cursor: pointer
 
       & svg:hover
-        fill: $active-color
+
 
 
   &__info

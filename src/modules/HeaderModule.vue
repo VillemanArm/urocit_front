@@ -61,7 +61,7 @@ defineOptions({
   height: 32rem
 
   &:hover
-    fill: $active-color
+
 
 .header__user
   width: 60rem

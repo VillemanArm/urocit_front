@@ -40,9 +40,9 @@ const setCurrentPage = (newValue: number) => {
     currentPage.value = newValue
 }
 
-onMounted(() => {
-    reportsStore.getReportsList()
-})
+// onMounted(() => {
+//     reportsStore.getReportsList()
+// })
 </script>
 
 <style scoped lang="sass">

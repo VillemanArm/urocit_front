@@ -67,16 +67,16 @@ const reportsStore = useReportsStore()
   margin-right: 23rem
   justify-content: center
 
-  background-color: $non-active-color
-  border-color: $non-active-color
+  background-
+  border-
 
   &>svg
     width: 24rem
     height: 24rem
 
   &:hover
-    background-color: $active-color
-    border-color: $active-color
+    background-color: $primary-color
+    border-color: $border-color
     color: $white
 
 .toolbar__filter

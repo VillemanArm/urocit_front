@@ -74,8 +74,8 @@ const handleResearchAddClick = () => {
     height: 20rem
 
   &:hover svg
-    fill: $active-color
-    stroke: $active-color
+
+    stroke: $primary-color
 
 .toolbar__filter
   display: flex

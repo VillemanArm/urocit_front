@@ -38,14 +38,14 @@ const handleItemClick = () => {
   font-size: 20rem
 
   border-radius: 4rem
-  border: 1px solid $non-active-color
+  border: 1px solid $border-color
   cursor: pointer
   text-decoration: none
 
   transition: all 0.3s ease-in-out
 
   &:hover
-    border-color: $active-color
+    border-color: $border-color
 
   & span
     display: inline-block

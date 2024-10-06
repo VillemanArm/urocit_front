@@ -53,24 +53,24 @@ defineProps<{
   align-items: center
 
   background-color: transparent
-  color: $non-active-color
+
   border: 2rem solid
-  border-color: $non-active-color
+  border-
 
   &:not(:first-child)
     margin-left: -2rem
     border-left-color: transparent
 
   &:hover
-    border-color: $active-color
-    color: $active-color
+    border-color: $border-color
+
 
   &--active
-    border-color: $active-color
-    color: $active-color
+    border-color: $border-color
+
 
     &:not(:first-child)
-      border-left-color: $active-color
+      border-left-color: $border-color
 
 .sort-direction
   display: grid
@@ -82,7 +82,7 @@ defineProps<{
     cursor: pointer
 
     &:hover
-      fill: $active-color
+
 
     &:first-child
       transform: rotate(-90deg)
@@ -90,5 +90,4 @@ defineProps<{
     &:last-child
       transform: rotate(90deg)
   &--active
-    fill: $active-color
 </style>

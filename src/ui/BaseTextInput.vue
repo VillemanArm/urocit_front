@@ -18,10 +18,10 @@ defineProps<{
   height: 54rem
   padding: 16rem 32rem
 
-  border: 1rem solid $non-active-color
+  border: 1rem solid $border-color
   border-radius: 4rem
   outline: none
 
   &:focus
-    border: 2rem solid $active-color
+    border: 2rem solid $primary-color
 </style>

@@ -155,7 +155,7 @@ const handleResetClick = () => {
 
     font-size: 18rem
 
-    border: 1rem solid $non-active-color
+    border: 1rem solid $border-color
     border-radius: 8rem
 
 .form__close
@@ -164,14 +164,14 @@ const handleResetClick = () => {
   float: right
 
   cursor: pointer
-  color: $non-active-color
+
 
   & svg
     width: 28rem
     height: 28rem
 
     &:hover
-      fill: $active-color
+
 
 .form__date
   display: block
@@ -201,20 +201,20 @@ const handleResetClick = () => {
     fill: $white
 
   &:hover svg
-    fill: $active-color
+
 
 .form__button--outline
   background-color: transparent
-  color: $active-color
+
 
   & svg
     width: 16rem
     height: 16rem
 
-    fill: $active-color
+
 
   &:hover
-    background-color: $active-color
+    background-color: $primary-color
     color: $white
 
     & svg
@@ -224,19 +224,19 @@ const handleResetClick = () => {
   height: 52rem
   padding: 16rem 32rem
 
-  border: 1rem solid $non-active-color
+  border: 1rem solid $border-color
   border-radius: 4rem
   outline: none
 
   &:focus
-    border: 2rem solid $active-color
+    border: 2rem solid $primary-color
 
 .form__input-file
     height: 52rem
     padding-top: 3rem
 
     border-radius: 4rem
-    border: 1rem solid $non-active-color
+    border: 1rem solid $border-color
 
 
     &::file-selector-button
@@ -252,5 +252,5 @@ const handleResetClick = () => {
 
 
     &:focus
-        border: 2rem solid $active-color
+        border: 2rem solid $primary-color
 </style>

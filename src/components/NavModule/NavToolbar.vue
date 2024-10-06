@@ -79,18 +79,18 @@ onMounted(() => {
 
   font-size: 24rem
 
-  color: $non-active-color
+
 
 .toolbar__option
   cursor: pointer
-  color: $non-active-color
+
 
   &:hover
-    color: $active-color
+
     text-decoration: underline
 
   &--active
-    color: $active-color
+
     text-decoration: underline
     cursor: default
 
