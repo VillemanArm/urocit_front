@@ -8,6 +8,10 @@
                 />
             </div>
         </RouterLink>
+        <div class="header-nav">
+            <router-link to="/research">Исследования</router-link>
+            <router-link to="/reports">Отчеты</router-link>
+        </div>
         <div class="header__toolbar">
             <router-link to="/">
                 <FaqIcon class="header__icon" />

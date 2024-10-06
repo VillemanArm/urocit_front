@@ -4,24 +4,15 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/',
         component: () => import('layouts/MainLayout.vue'),
+        redirect: '/research/',
         children: [
             {
-                path: '',
-                component: () => import('pages/MainPage.vue'),
-                // children: [
-                //     // {
-                //     //     path: '',
-                //     //     component: () => import('src/modules/ResearchListModule.vue'),
-                //     // },
-                //     {
-                //         path: 'research/',
-                //         component: () => import('src/modules/ResearchListModule.vue'),
-                //     },
-                //     {
-                //         path: 'reports/',
-                //         component: () => import('src/modules/ReportsListModule.vue'),
-                //     },
-                // ],
+                path: 'research/',
+                component: () => import('pages/ResearchPage.vue'),
+            },
+            {
+                path: 'reports/',
+                component: () => import('pages/ReportsPage.vue'),
             },
             {
                 path: 'report/:id',
@@ -29,7 +20,6 @@ const routes: RouteRecordRaw[] = [
             },
         ],
     },
-
     // Always leave this as last one,
     // but you can also remove it
     {
