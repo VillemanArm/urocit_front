@@ -1,7 +1,11 @@
 import {ref, watch} from 'vue'
 import {defineStore} from 'pinia'
 import ReportsApi from 'src/common_functions/reportsApi'
-import {ReportItem, ReportsListRequestParameters, ReportsSortOptions} from 'src/types/reports.dto'
+import {
+    ReportItem,
+    ReportsListRequestParameters,
+    ReportsSortOptions,
+} from 'src/modules/ReportsList/reports.dto'
 
 const reportsApi = new ReportsApi()
 

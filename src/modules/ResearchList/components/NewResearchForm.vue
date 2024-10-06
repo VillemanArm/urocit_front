@@ -111,7 +111,7 @@
 import {ref} from 'vue'
 import BaseButton from 'src/ui/BaseButton.vue'
 import SuccessIcon from 'assets/icons/success-icon.vue'
-import {useResearchStore} from 'stores/ResearchStore'
+import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import CloseIcon from 'assets/icons/close-icon.vue'
 
 const researchStore = useResearchStore()

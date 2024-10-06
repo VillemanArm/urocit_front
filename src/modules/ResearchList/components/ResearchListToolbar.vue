@@ -1,43 +1,43 @@
 <template>
     <div class="toolbar">
         <BaseButton
-            label="Скачать отчеты"
-            class="toolbar__download-reports"
-            @click="reportsStore.getReportFile"
+            label="Добавить исследование"
+            class="toolbar__research-add"
+            @click="handleResearchAddClick"
         >
-            <ReportIcon />
+            <AddBigIcon />
         </BaseButton>
         <div class="toolbar__filter">
             <FilterOption
                 label="По дате"
-                :optionActive="reportsStore.listRequestParameters.sortOption === 'date'"
-                :sortDirectionActive="reportsStore.listRequestParameters.sortDescending"
+                :optionActive="researchStore.listRequestParameters.sortOption === 'date'"
+                :sortDirectionActive="researchStore.listRequestParameters.sortDescending"
                 class="toolbar__filter-option"
                 @setDescending="
                     (direction) => {
-                        reportsStore.setSortRequestParameters('date', direction)
+                        researchStore.setSortRequestParameters('date', direction)
                     }
                 "
             />
             <FilterOption
                 label="По пациенту"
-                :optionActive="reportsStore.listRequestParameters.sortOption === 'name'"
-                :sortDirectionActive="reportsStore.listRequestParameters.sortDescending"
+                :optionActive="researchStore.listRequestParameters.sortOption === 'name'"
+                :sortDirectionActive="researchStore.listRequestParameters.sortDescending"
                 class="toolbar__filter-option"
                 @setDescending="
                     (direction) => {
-                        reportsStore.setSortRequestParameters('name', direction)
+                        researchStore.setSortRequestParameters('name', direction)
                     }
                 "
             />
             <FilterOption
                 label="По номеру исследования"
-                :optionActive="reportsStore.listRequestParameters.sortOption === 'number'"
-                :sortDirectionActive="reportsStore.listRequestParameters.sortDescending"
+                :optionActive="researchStore.listRequestParameters.sortOption === 'number'"
+                :sortDirectionActive="researchStore.listRequestParameters.sortDescending"
                 class="toolbar__filter-option"
                 @setDescending="
                     (direction) => {
-                        reportsStore.setSortRequestParameters('number', direction)
+                        researchStore.setSortRequestParameters('number', direction)
                     }
                 "
             />
@@ -46,12 +46,17 @@
 </template>
 
 <script setup lang="ts">
-import ReportIcon from 'assets/icons/report-icon.vue'
+import AddBigIcon from 'assets/icons/add-big-icon.vue'
 import BaseButton from 'src/ui/BaseButton.vue'
-import {useReportsStore} from 'stores/ReportsStore'
+import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import FilterOption from 'src/ui/FilterOption.vue'
 
-const reportsStore = useReportsStore()
+const researchStore = useResearchStore()
+
+const handleResearchAddClick = () => {
+    researchStore.isNewResearchForm = true
+    researchStore.getNewResearchData()
+}
 </script>
 
 <style scoped lang="sass">
@@ -59,25 +64,18 @@ const reportsStore = useReportsStore()
   display: flex
   margin-bottom: 32rem
 
-
-.toolbar__download-reports
+.toolbar__research-add
   height: 52rem
-  width: 281rem
   padding: 12rem 14rem
   margin-right: 23rem
-  justify-content: center
 
-  background-
-  border-
+  & svg
+    width: 20rem
+    height: 20rem
 
-  &>svg
-    width: 24rem
-    height: 24rem
+  &:hover svg
 
-  &:hover
-    background-color: $primary-color
-    border-color: $border-color
-    color: $white
+    stroke: $primary-color
 
 .toolbar__filter
   display: flex

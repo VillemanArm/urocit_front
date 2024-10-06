@@ -2,7 +2,7 @@ import {
     NewResearchServerData,
     ResearchItem,
     ResearchListRequestParameters,
-} from 'src/types/research.dto'
+} from 'src/modules/ResearchList/research.dto'
 
 const serverURL = import.meta.env.PROD ? import.meta.env.VITE_SERVER_URL : ''
 

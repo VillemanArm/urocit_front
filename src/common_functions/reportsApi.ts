@@ -1,4 +1,4 @@
-import {ReportItem, ReportsListRequestParameters} from 'src/types/reports.dto'
+import {ReportItem, ReportsListRequestParameters} from 'src/modules/ReportsList/reports.dto'
 
 const serverURL = import.meta.env.PROD ? import.meta.env.VITE_SERVER_URL : ''
 

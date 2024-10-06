@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import {useReportsStore} from 'src/stores/ReportsStore'
+import {useReportsStore} from './ReportsList/ReportsStore'
 
 const reportsStore = useReportsStore()
 </script>

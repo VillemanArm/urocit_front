@@ -8,20 +8,20 @@ const routes: RouteRecordRaw[] = [
             {
                 path: '',
                 component: () => import('pages/MainPage.vue'),
-                children: [
-                    // {
-                    //     path: '',
-                    //     component: () => import('src/modules/ResearchListModule.vue'),
-                    // },
-                    {
-                        path: 'research/',
-                        component: () => import('src/modules/ResearchListModule.vue'),
-                    },
-                    {
-                        path: 'reports/',
-                        component: () => import('src/modules/ReportsListModule.vue'),
-                    },
-                ],
+                // children: [
+                //     // {
+                //     //     path: '',
+                //     //     component: () => import('src/modules/ResearchListModule.vue'),
+                //     // },
+                //     {
+                //         path: 'research/',
+                //         component: () => import('src/modules/ResearchListModule.vue'),
+                //     },
+                //     {
+                //         path: 'reports/',
+                //         component: () => import('src/modules/ReportsListModule.vue'),
+                //     },
+                // ],
             },
             {
                 path: 'report/:id',

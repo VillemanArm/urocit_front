@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import {ReportItem} from 'src/types/reports.dto'
-import {useReportsStore} from 'stores/ReportsStore'
+import {ReportItem} from 'src/modules/ReportsList/reports.dto'
+import {useReportsStore} from '../ReportsStore'
 
 const props = defineProps<{
     reportItem: ReportItem

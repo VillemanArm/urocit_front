@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import HeaderModule from 'src/modules/HeaderModule.vue'
+import HeaderModule from 'src/modules/Header/HeaderModule.vue'
 
 defineOptions({
     name: 'MainLayout',

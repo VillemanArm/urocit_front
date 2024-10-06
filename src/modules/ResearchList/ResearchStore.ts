@@ -7,7 +7,7 @@ import {
     ResearchItem,
     ResearchListRequestParameters,
     ResearchSortOptions,
-} from 'src/types/research.dto'
+} from 'src/modules/ResearchList/research.dto'
 
 const researchApi = new ResearchApi()
 

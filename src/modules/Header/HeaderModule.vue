@@ -60,9 +60,6 @@ defineOptions({
   width: 32rem
   height: 32rem
 
-  &:hover
-
-
 .header__user
   width: 60rem
   height: 60rem
