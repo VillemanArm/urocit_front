@@ -9,30 +9,56 @@
             </div>
         </RouterLink>
         <div class="header-nav">
-            <router-link to="/research">Исследования</router-link>
-            <router-link to="/reports">Отчеты</router-link>
+            <router-link
+                to="/research"
+                :class="{header__link: true, 'header__link--active': $route.path === '/research'}"
+                >Исследования</router-link
+            >
+            <router-link
+                to="/reports"
+                :class="{header__link: true, 'header__link--active': $route.path === '/reports'}"
+                >Отчеты</router-link
+            >
         </div>
         <div class="header__toolbar">
-            <router-link to="/">
-                <FaqIcon class="header__icon" />
-            </router-link>
-            <router-link to="/">
-                <SettingsIcon class="header__icon" />
-            </router-link>
-            <div class="header__user">
+            <div class="header__icon">
                 <img
-                    src="~assets/img/user.png"
-                    alt=""
+                    src="~assets/icons_svg/bell-icon.svg"
+                    alt="bell"
                 />
             </div>
+            <div class="header__user">
+                <div class="header__user-avatar">
+                    <img
+                        src="~assets/img/user.png"
+                        alt=""
+                    />
+                </div>
+                <span>Киселев И.В.</span>
+            </div>
+            <router-link
+                to="/"
+                class="header__icon"
+            >
+                <img
+                    src="~assets/icons_svg/info-icon.svg"
+                    alt="bell"
+                />
+            </router-link>
+            <router-link
+                to="/"
+                class="header__icon"
+            >
+                <img
+                    src="~assets/icons_svg/settings-icon.svg"
+                    alt="bell"
+                />
+            </router-link>
         </div>
     </header>
 </template>
 
 <script setup lang="ts">
-import FaqIcon from 'assets/icons/faq-icon.vue'
-import SettingsIcon from 'assets/icons/settings-icon.vue'
-
 defineOptions({
     name: 'MainLayout',
 })
@@ -40,34 +66,54 @@ defineOptions({
 
 <style lang="sass">
 .header
-  padding: 32rem 64rem
-  display: flex
-  justify-content: space-between
+  padding: 22rem 32rem
+  display: grid
+  grid-template-columns: 325rem 1fr auto
   align-items: center
 
 .header__logo
-  width: 252rem
-  height: 44rem
+  width: 141rem
+  height: 65rem
+
+.header-nav
+  display: flex
+  gap: 67rem
+
+  font-size: 20rem
+
+.header__link
+  color: $secondary-font-color
+
+  &:hover
+    color: $primary-font-color
+
+  &--active
+    color: $primary-font-color
+    text-decoration: underline
 
 .header__toolbar
   display: flex
   align-items: center
-
-  &>a
-    display: flex
-    align-items: center
-
-    &:not(:last-child)
-      margin-right: 24rem
+  gap: 8rem
 
 .header__icon
   width: 32rem
   height: 32rem
 
-.header__user
-  width: 60rem
-  height: 60rem
-  margin-left: 8rem
+  cursor: pointer
 
+.header__user
+  display: flex
+  align-items: center
+  gap: 8rem
+
+  cursor: pointer
+
+  span
+    width: 139rem
+
+.header__user-avatar
+  width: 48rem
+  height: 48rem
   border-radius: 50%
 </style>
