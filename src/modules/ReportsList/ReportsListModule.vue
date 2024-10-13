@@ -12,13 +12,13 @@
             />
         </div>
 
-        <BasePagination
+        <!-- <BasePagination
             v-if="maxPages > 1"
             :maxPages="maxPages"
             :currentPage="currentPage"
             @changePage="(value) => setCurrentPage(value)"
             class="list__pagination"
-        />
+        /> -->
     </div>
 </template>
 

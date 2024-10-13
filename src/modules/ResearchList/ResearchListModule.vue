@@ -1,11 +1,8 @@
 <template>
     <div class="list">
         <h1>Исследования</h1>
-        <ResearchListToolbar v-if="!researchStore.isNewResearchForm" />
-        <div
-            class="list__items"
-            v-if="!researchStore.isNewResearchForm"
-        >
+        <ResearchListToolbar />
+        <div class="list__items">
             <ResearchListItem
                 v-for="researchItem in researchStore.researchItems.slice(
                     displayedItemsFrom,
@@ -14,15 +11,15 @@
                 :researchItem="researchItem"
                 :key="researchItem.id"
             />
-        </div>
 
-        <!-- <BasePagination
-            v-if="maxPages > 1 && !researchStore.isNewResearchForm"
-            :maxPages="maxPages"
-            :currentPage="currentPage"
-            @changePage="(value) => setCurrentPage(value)"
-            class="list__pagination"
-        /> -->
+            <!-- v-if="maxPages > 1 && !researchStore.isNewResearchForm" -->
+            <BasePagination
+                :maxPage="maxPages"
+                :currentPage="currentPage"
+                @changePage="(value) => setCurrentPage(value)"
+                class="list__pagination"
+            />
+        </div>
 
         <NewResearchForm v-if="researchStore.isNewResearchForm" />
     </div>
@@ -31,7 +28,7 @@
 <script setup lang="ts">
 import {ref, computed, onMounted} from 'vue'
 import ResearchListToolbar from './components/ResearchListToolbar.vue'
-// import BasePagination from 'src/ui/BasePagination.vue'
+import BasePagination from 'src/ui/BasePagination.vue'
 import ResearchListItem from './components/ResearchListItem.vue'
 import NewResearchForm from './components/NewResearchForm.vue'
 import {useResearchStore} from './ResearchStore'
@@ -58,7 +55,7 @@ onMounted(() => {
   position: relative
 
 .list__items
-  min-height: 700rem
+  min-height: 663rem
   width: 1051rem
   position: absolute
   right: 32rem
@@ -68,6 +65,6 @@ onMounted(() => {
   align-content: start
 
 .list__pagination
-  margin-bottom: 32rem
-  float: right
+  position: absolute
+  bottom: 0
 </style>
