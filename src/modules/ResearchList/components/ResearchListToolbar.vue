@@ -2,10 +2,10 @@
     <div class="toolbar">
         <BaseButton
             label="Добавить исследование"
-            class="toolbar__research-add"
+            class="toolbar__add-button"
             @click="handleResearchAddClick"
         >
-            <AddBigIcon />
+            <AddIcon />
         </BaseButton>
         <div class="toolbar__filter">
             <FilterOption
@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import AddBigIcon from 'assets/icons/add-big-icon.vue'
+import AddIcon from 'src/assets/icons/add-icon.vue'
 import BaseButton from 'src/ui/BaseButton.vue'
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import FilterOption from 'src/ui/FilterOption.vue'
@@ -61,21 +61,15 @@ const handleResearchAddClick = () => {
 
 <style scoped lang="sass">
 .toolbar
+  width: 100%
+  padding: 8rem 32rem
   display: flex
-  margin-bottom: 32rem
+  margin-bottom: 16rem
 
-.toolbar__research-add
-  height: 52rem
-  padding: 12rem 14rem
-  margin-right: 23rem
+  background-color: $background-color
 
-  & svg
-    width: 20rem
-    height: 20rem
-
-  &:hover svg
-
-    stroke: $primary-color
+.toolbar__add-button
+  margin-right: 64rem
 
 .toolbar__filter
   display: flex

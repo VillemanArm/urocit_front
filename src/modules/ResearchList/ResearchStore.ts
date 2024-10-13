@@ -1,6 +1,6 @@
 import {ref, computed, watch} from 'vue'
 import {defineStore} from 'pinia'
-import ResearchApi from 'src/common_functions/researchApi'
+import ResearchApi from './researchApi'
 import {
     NewResearchData,
     NewResearchServerData,

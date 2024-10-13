@@ -1,5 +1,6 @@
 <template>
     <div class="list">
+        <h1>Исследования</h1>
         <ResearchListToolbar v-if="!researchStore.isNewResearchForm" />
         <div
             class="list__items"
@@ -15,13 +16,13 @@
             />
         </div>
 
-        <BasePagination
+        <!-- <BasePagination
             v-if="maxPages > 1 && !researchStore.isNewResearchForm"
             :maxPages="maxPages"
             :currentPage="currentPage"
             @changePage="(value) => setCurrentPage(value)"
             class="list__pagination"
-        />
+        /> -->
 
         <NewResearchForm v-if="researchStore.isNewResearchForm" />
     </div>
@@ -29,10 +30,10 @@
 
 <script setup lang="ts">
 import {ref, computed, onMounted} from 'vue'
-import ResearchListToolbar from 'components/ResearchListModule/ResearchListToolbar.vue'
-import BasePagination from 'src/ui/BasePagination.vue'
-import ResearchListItem from 'components/ResearchListModule/ResearchListItem.vue'
-import NewResearchForm from 'components/ResearchListModule/NewResearchForm.vue'
+import ResearchListToolbar from './components/ResearchListToolbar.vue'
+// import BasePagination from 'src/ui/BasePagination.vue'
+import ResearchListItem from './components/ResearchListItem.vue'
+import NewResearchForm from './components/NewResearchForm.vue'
 import {useResearchStore} from './ResearchStore'
 
 const researchStore = useResearchStore()
@@ -47,14 +48,13 @@ const setCurrentPage = (newValue: number) => {
     currentPage.value = newValue
 }
 
-// onMounted(() => {
-//     researchStore.getResearchList()
-// })
+onMounted(() => {
+    researchStore.getResearchList()
+})
 </script>
 
 <style scoped lang="sass">
-.list
-  padding: 32rem 45rem 32rem 45rem
+
 
 .list__items
   min-height: 700rem

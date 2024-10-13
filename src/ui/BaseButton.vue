@@ -21,31 +21,31 @@ defineProps<{
 
 <style scoped lang="sass">
 .base-button
-  padding: 12rem 16rem
+  padding: 14rem 18rem 14rem 14rem
   display: flex
   align-items: center
-  gap: 8rem
+  gap: 6rem
 
-  font-size: 16rem
+  font-size: 18rem
   font-weight: 600
 
-  border-radius: 8rem
-  background-color: $accent
-  border: 2rem solid $accent
+  border-radius: 4rem
+  background-color: $primary-color
   color: $white
   cursor: pointer
 
-  transition: all 0.3s ease-in-out
+  transition: all 0.25s ease-in-out
 
   &:hover
-    background-color: transparent
-    color: $accent
+    background-color: $tretiary-color
 
   &>svg
-    width: 20rem
-    height: 20rem
+    width: 24rem
+    height: 24rem
 
-    transition: all 0.3s ease-in-out
+    fill: $white !important
+    color: $white
+
 
   &>span
     display: inline-block

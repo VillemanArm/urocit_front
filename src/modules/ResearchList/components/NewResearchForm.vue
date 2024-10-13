@@ -170,8 +170,6 @@ const handleResetClick = () => {
     width: 28rem
     height: 28rem
 
-    &:hover
-
 
 .form__date
   display: block
@@ -200,7 +198,6 @@ const handleResetClick = () => {
 
     fill: $white
 
-  &:hover svg
 
 
 .form__button--outline
@@ -210,8 +207,6 @@ const handleResetClick = () => {
   & svg
     width: 16rem
     height: 16rem
-
-
 
   &:hover
     background-color: $primary-color

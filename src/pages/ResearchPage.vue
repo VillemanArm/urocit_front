@@ -1,7 +1,11 @@
 <template>
-    <q-page class="row"> research page </q-page>
+    <q-page>
+        <ResearchListModule />
+    </q-page>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ResearchListModule from 'src/modules/ResearchList/ResearchListModule.vue'
+</script>
 
 <style></style>

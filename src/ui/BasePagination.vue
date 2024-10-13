@@ -67,7 +67,6 @@ const handleChangePage = (newPageValue: number) => {
     &--active
       cursor: pointer
 
-      & svg:hover
 
 
 

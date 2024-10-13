@@ -1,6 +1,6 @@
 import {ref, watch} from 'vue'
 import {defineStore} from 'pinia'
-import ReportsApi from 'src/common_functions/reportsApi'
+import ReportsApi from './reportsApi'
 import {
     ReportItem,
     ReportsListRequestParameters,

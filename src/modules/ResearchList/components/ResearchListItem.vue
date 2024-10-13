@@ -66,6 +66,4 @@ const researchStore = useResearchStore()
   &>svg
     width: 24rem
     height: 24rem
-
-  &:hover svg
 </style>

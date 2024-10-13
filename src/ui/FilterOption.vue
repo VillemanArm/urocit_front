@@ -54,8 +54,8 @@ defineProps<{
 
   background-color: transparent
 
-  border: 2rem solid
-  border-
+  border: 2rem solid $border-color
+
 
   &:not(:first-child)
     margin-left: -2rem
@@ -81,13 +81,9 @@ defineProps<{
 
     cursor: pointer
 
-    &:hover
-
-
     &:first-child
       transform: rotate(-90deg)
 
     &:last-child
       transform: rotate(90deg)
-  &--active
 </style>

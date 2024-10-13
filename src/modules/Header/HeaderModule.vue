@@ -22,10 +22,7 @@
         </div>
         <div class="header__toolbar">
             <div class="header__icon">
-                <img
-                    src="~assets/icons_svg/bell-icon.svg"
-                    alt="bell"
-                />
+                <BellIcon />
             </div>
             <div class="header__user">
                 <div class="header__user-avatar">
@@ -42,7 +39,7 @@
             >
                 <img
                     src="~assets/icons_svg/info-icon.svg"
-                    alt="bell"
+                    alt="info"
                 />
             </router-link>
             <router-link
@@ -51,7 +48,7 @@
             >
                 <img
                     src="~assets/icons_svg/settings-icon.svg"
-                    alt="bell"
+                    alt="settings"
                 />
             </router-link>
         </div>
@@ -59,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import BellIcon from 'src/assets/icons/bell-icon.vue'
 defineOptions({
     name: 'MainLayout',
 })
