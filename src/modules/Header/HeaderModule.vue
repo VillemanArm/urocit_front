@@ -37,19 +37,13 @@
                 to="/"
                 class="header__icon"
             >
-                <img
-                    src="~assets/icons_svg/info-icon.svg"
-                    alt="info"
-                />
+                <InfoIcon />
             </router-link>
             <router-link
                 to="/"
                 class="header__icon"
             >
-                <img
-                    src="~assets/icons_svg/settings-icon.svg"
-                    alt="settings"
-                />
+                <SettingsIcon />
             </router-link>
         </div>
     </header>
@@ -57,6 +51,9 @@
 
 <script setup lang="ts">
 import BellIcon from 'src/assets/icons/bell-icon.vue'
+import InfoIcon from 'src/assets/icons/info-icon.vue'
+import SettingsIcon from 'src/assets/icons/settings-icon.vue'
+
 defineOptions({
     name: 'MainLayout',
 })
