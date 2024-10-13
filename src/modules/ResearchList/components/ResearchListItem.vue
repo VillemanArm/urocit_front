@@ -8,14 +8,14 @@
             label="Начать анализ"
             @click="handleAnalysisButtonClick"
         >
-            <AnalysisIcon />
+            <AiIcon />
         </BaseButton>
     </div>
 </template>
 
 <script setup lang="ts">
 import BaseButton from 'src/ui/BaseButton.vue'
-import AnalysisIcon from 'assets/icons/analysis-icon.vue'
+import AiIcon from 'src/assets/icons/ai-icon.vue'
 import {useResearchStore} from '../ResearchStore'
 import {ResearchItem} from '../research.dto'
 
@@ -33,14 +33,12 @@ const researchStore = useResearchStore()
 
 <style scoped lang="sass">
 .item
-  width: 1119rem
-  min-height: 86rem
-  padding: 0 32rem
+  width: 1051rem
+  min-height: 55rem
+  padding: 0 16rem
   display: grid
-  grid-template-columns: 130rem 270rem 356rem 1fr
-  column-gap: 26rem
-
-  font-size: 20rem
+  grid-template-columns: 120rem 240rem 380rem 1fr
+  column-gap: 32rem
 
   border-radius: 8rem
   border: 1px solid $border-color
@@ -57,11 +55,11 @@ const researchStore = useResearchStore()
     display: inline-block
 
 .item__button
-  width: 220rem
-  padding: 14rem 14rem
+  // width: 220rem
+  padding: 8rem 16rem
   align-self: center
 
-  font-size: 18rem
+  font-size: 16rem
 
   &>svg
     width: 24rem

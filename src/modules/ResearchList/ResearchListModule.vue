@@ -54,13 +54,17 @@ onMounted(() => {
 </script>
 
 <style scoped lang="sass">
-
+.list
+  position: relative
 
 .list__items
   min-height: 700rem
+  width: 1051rem
+  position: absolute
+  right: 32rem
   margin-bottom: 32rem
   display: grid
-  gap: 16rem
+  gap: 4rem
   align-content: start
 
 .list__pagination

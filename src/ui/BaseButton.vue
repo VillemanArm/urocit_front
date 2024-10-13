@@ -28,6 +28,7 @@ defineProps<{
 
   font-size: 18rem
   font-weight: 600
+  line-height: 100%
 
   border-radius: 4rem
   background-color: $primary-color
