@@ -46,7 +46,7 @@
         </div>
         <q-input
             outlined
-            v-model="searchQuery"
+            v-model.trim="researchStore.listRequestParameters.searchQuery"
             placeholder="Поиск"
             dense
             square
@@ -56,9 +56,9 @@
                 <SearchIcon />
             </template>
             <template v-slot:append>
-                <q-icon
+                <CancelIcon
                     name="close"
-                    @click="searchQuery = ''"
+                    @click="researchStore.listRequestParameters.searchQuery = ''"
                     class="cursor-pointer"
                 />
             </template>
@@ -70,7 +70,7 @@
 import AddIcon from 'src/assets/icons/add-icon.vue'
 import SearchIcon from 'src/assets/icons/search-icon.vue'
 import BaseButton from 'src/ui/BaseButton.vue'
-
+import CancelIcon from 'src/assets/icons/cancel-icon.vue'
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import FilterOption from 'src/ui/FilterOption.vue'
 import {ref} from 'vue'
@@ -111,4 +111,11 @@ const handleResearchAddClick = () => {
 
 .toolbar__search-input
   width: 390rem
+
+:deep(.q-field--dense .q-field__control, .q-field--dense .q-field__marginal)
+  height: 46rem
+
+  svg
+    width: 24rem
+    height: 24rem
 </style>
