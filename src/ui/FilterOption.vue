@@ -47,9 +47,7 @@ defineProps<{
 
 <style scoped lang="sass">
 .option
-  height: 52rem
   display: flex
-  padding: 0 34rem
   gap: 12rem
   align-items: center
 

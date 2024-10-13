@@ -42,16 +42,40 @@
                 "
             />
         </div>
+        <q-input
+            outlined
+            v-model="searchQuery"
+            placeholder="Поиск"
+            dense
+            square
+            class="toolbar__search-input"
+        >
+            <template v-slot:prepend>
+                <SearchIcon />
+            </template>
+            <template v-slot:append>
+                <q-icon
+                    name="close"
+                    @click="searchQuery = ''"
+                    class="cursor-pointer"
+                />
+            </template>
+        </q-input>
     </div>
 </template>
 
 <script setup lang="ts">
 import AddIcon from 'src/assets/icons/add-icon.vue'
+import SearchIcon from 'src/assets/icons/search-icon.vue'
 import BaseButton from 'src/ui/BaseButton.vue'
+
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import FilterOption from 'src/ui/FilterOption.vue'
+import {ref} from 'vue'
 
 const researchStore = useResearchStore()
+
+const searchQuery = ref('')
 
 const handleResearchAddClick = () => {
     researchStore.isNewResearchForm = true
@@ -64,22 +88,20 @@ const handleResearchAddClick = () => {
   width: 100%
   padding: 8rem 32rem
   display: flex
+  align-items: center
   margin-bottom: 16rem
 
   background-color: $background-color
 
 .toolbar__add-button
-  margin-right: 64rem
+  margin-right: 48rem
 
 .toolbar__filter
+  padding: 0rem 16rem
   display: flex
+  gap: 60rem
 
-.toolbar__filter-option
-  &:first-child
-    border-top-left-radius: 8rem
-    border-bottom-left-radius: 8rem
 
-  &:last-child
-    border-top-right-radius: 8rem
-    border-bottom-right-radius: 8rem
+.toolbar__search-input
+  width: 390rem
 </style>
