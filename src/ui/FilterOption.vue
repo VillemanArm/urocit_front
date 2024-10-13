@@ -18,13 +18,13 @@
     >
         <span>{{ label }}</span>
         <div class="sort-direction">
-            <NextIcon
+            <ArrowUpIcon
                 @click="$emit('setDescending', false)"
                 :class="{
                     'sort-direction--active': optionActive && !sortDirectionActive,
                 }"
             />
-            <NextIcon
+            <ArrowDownIcon
                 @click="$emit('setDescending', true)"
                 :class="{
                     'sort-direction--active': optionActive && sortDirectionActive,
@@ -35,7 +35,8 @@
 </template>
 
 <script setup lang="ts">
-import NextIcon from 'assets/icons/next-icon.vue'
+import ArrowDownIcon from 'src/assets/icons/arrow-down-icon.vue'
+import ArrowUpIcon from 'src/assets/icons/arrow-up-icon.vue'
 
 defineProps<{
     label: string
@@ -49,41 +50,33 @@ defineProps<{
   height: 52rem
   display: flex
   padding: 0 34rem
-  gap: 16rem
+  gap: 12rem
   align-items: center
 
-  background-color: transparent
+  font-size: 16rem
+  font-weight: 500
 
-  border: 2rem solid $border-color
+  color: $secondary-font-color
 
-
-  &:not(:first-child)
-    margin-left: -2rem
-    border-left-color: transparent
+  transition: all 0.25s ease-in-out
 
   &:hover
-    border-color: $border-color
-
+    color: $primary-font-color
 
   &--active
-    border-color: $border-color
-
-
-    &:not(:first-child)
-      border-left-color: $border-color
+    color: $primary-font-color
 
 .sort-direction
   display: grid
+  gap: 8rem
 
   & svg
-    width: 18rem
-    height: 18rem
+    width: 12rem
+    height: 12rem
 
     cursor: pointer
+    fill: $secondary-font-color
 
-    &:first-child
-      transform: rotate(-90deg)
-
-    &:last-child
-      transform: rotate(90deg)
+    &:hover
+      fill: $primary-font-color
 </style>
