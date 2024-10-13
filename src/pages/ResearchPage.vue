@@ -1,5 +1,5 @@
 <template>
-    <q-page>
+    <q-page class="container">
         <ResearchListModule />
     </q-page>
 </template>

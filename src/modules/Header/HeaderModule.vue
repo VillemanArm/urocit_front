@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header container">
         <RouterLink to="/">
             <div class="header__logo">
                 <img
