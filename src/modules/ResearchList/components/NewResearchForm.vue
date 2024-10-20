@@ -90,12 +90,11 @@
                 class="form__label"
                 >Комментарий</label
             >
-            <input
-                class="form__input-field"
-                type="text"
+            <textarea
+                class="form__input-field form__input-field--textarea"
                 id="comment"
                 name="comment"
-            />
+            ></textarea>
         </form>
         <input
             type="file"
@@ -141,13 +140,6 @@ const researchStore = useResearchStore()
 
 const newResearchForm = ref()
 
-const handleCloseClick = () => {
-    researchStore.isNewResearchForm = false
-    researchStore.resetNewResearchData()
-    researchStore.getResearchList()
-    newResearchForm.value.reset()
-}
-
 const handleSaveAndCloseClick = async () => {
     const newResearchData: FormData = new FormData(newResearchForm.value)
     newResearchForm.value.reset()
@@ -185,8 +177,16 @@ const handleResetClick = () => {
   label
     align-self: center
 
+    &:nth-child(15)
+      margin-top: 10rem
+      align-self: start
+
+
 .form__label
   color: $secondary-font-color
+
+
+
 
 .form__input-field
   height: 36rem
@@ -198,6 +198,10 @@ const handleResetClick = () => {
 
   &:focus
     border: 2rem solid $primary-color
+
+.form__input-field--textarea
+  height: 72rem
+  resize: none
 
 .form__input-file
   width: 100%
