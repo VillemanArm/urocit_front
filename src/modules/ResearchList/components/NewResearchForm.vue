@@ -1,33 +1,40 @@
 <template>
     <div class="form">
-        <div
-            class="form__close"
-            @click="handleCloseClick"
-        >
-            <CloseIcon />
-        </div>
-        <span class="form__date">{{
-            researchStore.newResearchData.researchDate.split('-').reverse().join('/')
-        }}</span>
         <form
             class="form__fields"
             ref="newResearchForm"
         >
-            <label for="researchNumber">№Исследования:</label>
+            <span class="form__label">Дата исследования</span>
+            <span class="form__date">{{
+                researchStore.newResearchData.researchDate.split('-').reverse().join('/')
+            }}</span>
+            <label
+                for="researchNumber"
+                class="form__label"
+                >Номер исследования</label
+            >
             <input
                 class="form__input-field"
                 type="text"
                 id="researchNumber"
                 name="researchNumber"
             />
-            <label for="patientName">ФИО пациента:</label>
+            <label
+                for="patientName"
+                class="form__label"
+                >Пациент (ФИО)</label
+            >
             <input
                 class="form__input-field"
                 type="text"
                 id="patientName"
                 name="patientName"
             />
-            <label for="patientAge">Возраст:</label>
+            <label
+                for="patientAge"
+                class="form__label"
+                >Возраст</label
+            >
             <input
                 class="form__input-field"
                 type="number"
@@ -36,7 +43,11 @@
                 max="120"
                 min="1"
             />
-            <label for="institutionByReferral">Направившее учреждение:</label>
+            <label
+                for="institutionByReferral"
+                class="form__label"
+                >Направившее учреждение</label
+            >
             <select
                 class="form__input-field"
                 id="institutionByReferral"
@@ -52,56 +63,67 @@
                     {{ institution }}
                 </option>
             </select>
-            <label for="doctorsName">ФИО лечащего врача:</label>
+            <label
+                for="doctorsName"
+                class="form__label"
+                >ФИО лечащего врача</label
+            >
             <input
                 class="form__input-field"
                 type="text"
                 id="doctorsName"
                 name="doctorsName"
             />
-            <label for="diagnosis">Клинический диагноз:</label>
+            <label
+                for="diagnosis"
+                class="form__label"
+                >Клинический диагноз</label
+            >
             <input
                 class="form__input-field"
                 type="text"
                 id="diagnosis"
                 name="diagnosis"
             />
-            <label for="comment">Комментарий:</label>
+            <label
+                for="comment"
+                class="form__label"
+                >Комментарий</label
+            >
             <input
                 class="form__input-field"
                 type="text"
                 id="comment"
                 name="comment"
             />
-            <label for="file">Загрузить файл:</label>
-            <input
-                type="file"
-                id="file"
-                name="file"
-                class="form__input-file"
-            />
         </form>
+        <input
+            type="file"
+            id="file"
+            name="file"
+            class="form__input-file"
+        />
         <div class="form__buttons">
             <BaseButton
-                label="Сохранить и закрыть"
+                label="Сохранить"
                 class="form__button"
                 @click="handleSaveAndCloseClick"
             >
-                <SuccessIcon />
+                <AddIcon />
             </BaseButton>
             <BaseButton
                 label="Сохранить и остаться"
                 class="form__button"
                 @click="handleSaveAndStayClick"
             >
-                <SuccessIcon />
+                <AddStayIcon />
             </BaseButton>
             <BaseButton
                 label="Очистить"
                 class="form__button form__button--outline"
                 @click="handleResetClick"
             >
-                <CloseIcon />
+                <CancelIcon />
             </BaseButton>
         </div>
     </div>
@@ -113,6 +135,9 @@ import BaseButton from 'src/ui/BaseButton.vue'
 import SuccessIcon from 'assets/icons/success-icon.vue'
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import CloseIcon from 'assets/icons/close-icon.vue'
+import AddIcon from 'assets/icons/add-icon.vue'
+import AddStayIcon from 'assets/icons/add-stay-icon.vue'
+import CancelIcon from 'assets/icons/cancel-icon.vue'
 
 const researchStore = useResearchStore()
 
@@ -149,103 +174,64 @@ const handleResetClick = () => {
 
 <style scoped lang="sass">
 .form
-    width: 1116rem
-    min-height: 728rem
-    padding: 32rem 0 0 90rem
+    width: 639rem
 
-    font-size: 18rem
-
-    border: 1rem solid $border-color
-    border-radius: 8rem
-
-.form__close
-  margin-top: -10rem
-  margin-right: 22rem
-  float: right
-
-  cursor: pointer
-
-
-  & svg
-    width: 28rem
-    height: 28rem
-
-
-.form__date
-  display: block
-  margin-bottom: 16rem
+    font-size: 13rem
 
 .form__fields
   display: grid
-  grid-template-columns: 184rem 717rem
-  gap: 16rem 24rem
+  grid-template-columns: 145rem 480rem
+  gap: 16rem
   margin-bottom: 32rem
 
-  & label
+  label
     align-self: center
 
-.form__buttons
-  margin-left: 210rem
-  display: flex
-  gap: 16rem
-
-.form__button
-  padding: 14rem 12rem
-
-  & svg
-    width: 24rem
-    height: 24rem
-
-    fill: $white
-
-
-
-.form__button--outline
-  background-color: transparent
-
-
-  & svg
-    width: 16rem
-    height: 16rem
-
-  &:hover
-    background-color: $primary-color
-    color: $white
-
-    & svg
-      fill: $white
+.form__label
+  color: $secondary-font-color
 
 .form__input-field
-  height: 52rem
-  padding: 16rem 32rem
+  height: 36rem
+  padding: 10rem 16rem
 
   border: 1rem solid $border-color
-  border-radius: 4rem
+  border-radius: 2rem
   outline: none
 
   &:focus
     border: 2rem solid $primary-color
 
 .form__input-file
-    height: 52rem
-    padding-top: 3rem
+  width: 100%
+  font-weight: bold
 
+  &::file-selector-button
+    height: 26rem
+    width: 145rem
+    margin-bottom: 32rem
+    margin-right: 16rem
+
+    font-weight: bold
+
+    background-color: $peachly
+    border: none
     border-radius: 4rem
-    border: 1rem solid $border-color
+    cursor: pointer
 
+    &:hover
+      background-color:$tretiary-color
 
-    &::file-selector-button
-        height: 52rem
-        margin-right: 16rem
-        padding: 0 4rem
+.form__buttons
+  display: flex
+  gap: 16rem
 
-        font-size: 1rem
+.form__button--outline
+  background-color: transparent
+  color: $secondary-font-color
 
-        background-color: transparent
-        border: 2rem solid transparent
-        color: transparent
+  border: 1rem solid $secondary-font-color
 
-
-    &:focus
-        border: 2rem solid $primary-color
+  &:hover
+    background-color: $primary-color
+    border-color: $primary-color
 </style>

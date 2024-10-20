@@ -12,17 +12,23 @@
                 :key="researchItem.id"
             />
 
-            <!-- v-if="maxPages > 1 && !researchStore.isNewResearchForm" -->
             <BasePagination
+                v-if="maxPages > 1 && !researchStore.isNewResearchForm"
                 :maxPage="maxPages"
                 :currentPage="currentPage"
                 @changePage="(value) => setCurrentPage(value)"
                 class="list__pagination"
             />
         </div>
-
-        <NewResearchForm v-if="researchStore.isNewResearchForm" />
     </div>
+
+    <BaseModal
+        v-if="researchStore.isNewResearchForm"
+        @closeModal="researchStore.isNewResearchForm = false"
+        header="Новое исследование"
+    >
+        <NewResearchForm />
+    </BaseModal>
 </template>
 
 <script setup lang="ts">
@@ -31,6 +37,7 @@ import ResearchListToolbar from './components/ResearchListToolbar.vue'
 import BasePagination from 'src/ui/BasePagination.vue'
 import ResearchListItem from './components/ResearchListItem.vue'
 import NewResearchForm from './components/NewResearchForm.vue'
+import BaseModal from 'src/ui/BaseModal.vue'
 import {useResearchStore} from './ResearchStore'
 
 const researchStore = useResearchStore()

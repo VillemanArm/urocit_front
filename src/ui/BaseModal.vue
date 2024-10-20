@@ -1,6 +1,6 @@
-<!-- 
+<!--
     Компонент представляет из себя модальное окно, которое принимает заголовок и компонент или html разметку в слот.
-    
+
     Принимает свойства:
         header?: string
 
@@ -23,21 +23,7 @@
                     class="modal__close"
                     @click="$emit('closeModal')"
                 >
-                    <svg
-                        width="6"
-                        height="8"
-                        viewBox="0 0 6 8"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        stroke="#272928"
-                    >
-                        <path
-                            d="M1.33334 7.33337L4.66668 4.00004L1.33334 0.666707"
-                            stroke="evenodd"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
+                    <CloseIcon />
                 </div>
             </div>
             <div class="modal__content">
@@ -48,7 +34,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted } from 'vue'
+import {onMounted, onUnmounted} from 'vue'
+import CloseIcon from 'src/assets/icons/close-icon.vue'
 
 defineProps<{
     header?: string
@@ -64,8 +51,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped lang="sass">
-@import '@/assets/styles/constants.sass'
-
 .modal__wrapper
     width: 100vw
     height: 100vh
@@ -81,21 +66,21 @@ onUnmounted(() => {
     overflow: hidden
 
 .modal
-    width: 600rem
-    padding: 16rem 20rem
+    // width: 715rem
+    // min-height: 697rem
+    padding: 28rem 38rem
 
-    background-color: $background-color
-    border-radius: 16rem
+    background-color: $white
 
 
 .modal__head
-    margin-bottom: 20rem
+    margin-bottom: 32rem
 
 .modal__close
     float: right
     cursor: pointer
-    width: 32rem
-    height: 32rem
+    width: 28rem
+    height: 28rem
 
     &>svg
         width: 100%
@@ -103,7 +88,4 @@ onUnmounted(() => {
 
 h2
     display: inline-block
-
-    font-size: 24rem
-    font-weight: 500
 </style>
