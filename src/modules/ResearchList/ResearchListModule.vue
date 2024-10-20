@@ -24,7 +24,7 @@
 
     <BaseModal
         v-if="researchStore.isNewResearchForm"
-        @closeModal="researchStore.isNewResearchForm = false"
+        @closeModal="handleModalCloseClick"
         header="Новое исследование"
     >
         <NewResearchForm />
@@ -50,6 +50,13 @@ const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.v
 
 const setCurrentPage = (newValue: number) => {
     currentPage.value = newValue
+}
+
+const handleModalCloseClick = () => {
+    researchStore.isNewResearchForm = false
+    researchStore.resetNewResearchData()
+    researchStore.getResearchList()
+    // newResearchForm.value.reset()
 }
 
 onMounted(() => {

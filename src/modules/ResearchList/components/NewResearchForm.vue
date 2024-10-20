@@ -132,9 +132,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import BaseButton from 'src/ui/BaseButton.vue'
-import SuccessIcon from 'assets/icons/success-icon.vue'
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
-import CloseIcon from 'assets/icons/close-icon.vue'
 import AddIcon from 'assets/icons/add-icon.vue'
 import AddStayIcon from 'assets/icons/add-stay-icon.vue'
 import CancelIcon from 'assets/icons/cancel-icon.vue'

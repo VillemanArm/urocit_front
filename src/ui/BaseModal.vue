@@ -11,17 +11,18 @@
 <template>
     <div
         class="modal__wrapper"
-        @click="$emit('closeModal')"
+        @click="onCloseModal"
     >
         <div
             @click.stop
             class="modal"
+            ref="modal"
         >
             <div class="modal__head">
                 <h2>{{ header }}</h2>
                 <div
                     class="modal__close"
-                    @click="$emit('closeModal')"
+                    @click="onCloseModal"
                 >
                     <CloseIcon />
                 </div>
@@ -34,8 +35,17 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, onUnmounted} from 'vue'
+import {onMounted, onUnmounted, ref} from 'vue'
 import CloseIcon from 'src/assets/icons/close-icon.vue'
+
+const emit = defineEmits(['closeModal'])
+
+const modal = ref<HTMLElement | null>(null)
+
+const onCloseModal = () => {
+    emit('closeModal')
+    modal.value?.querySelector('form')?.reset()
+}
 
 defineProps<{
     header?: string
@@ -66,8 +76,6 @@ onUnmounted(() => {
     overflow: hidden
 
 .modal
-    // width: 715rem
-    // min-height: 697rem
     padding: 28rem 38rem
 
     background-color: $white
