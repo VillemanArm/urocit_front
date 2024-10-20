@@ -12,13 +12,15 @@
             <router-link
                 to="/research"
                 :class="{header__link: true, 'header__link--active': $route.path === '/research'}"
-                >Исследования</router-link
             >
+                Исследования
+            </router-link>
             <router-link
                 to="/reports"
                 :class="{header__link: true, 'header__link--active': $route.path === '/reports'}"
-                >Отчеты</router-link
             >
+                Отчеты
+            </router-link>
         </div>
         <div class="header__toolbar">
             <div class="header__icon">

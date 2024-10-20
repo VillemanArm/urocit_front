@@ -73,11 +73,8 @@ import BaseButton from 'src/ui/BaseButton.vue'
 import CancelIcon from 'src/assets/icons/cancel-icon.vue'
 import {useResearchStore} from 'src/modules/ResearchList/ResearchStore'
 import FilterOption from 'src/ui/FilterOption.vue'
-import {ref} from 'vue'
 
 const researchStore = useResearchStore()
-
-const searchQuery = ref('')
 
 const handleResearchAddClick = () => {
     researchStore.isNewResearchForm = true
@@ -107,7 +104,6 @@ const handleResearchAddClick = () => {
   padding: 0rem 16rem
   display: flex
   gap: 60rem
-
 
 .toolbar__search-input
   width: 390rem

@@ -1,7 +1,7 @@
 <template>
     <div class="list">
         <ReportsListToolbar />
-        <div class="list__items">
+        <!-- <div class="list__items">
             <ReportsListItem
                 v-for="reportItem in reportsStore.reportItems.slice(
                     displayedItemsFrom,
@@ -10,7 +10,7 @@
                 :reportItem="reportItem"
                 :key="reportItem.id"
             />
-        </div>
+        </div> -->
 
         <!-- <BasePagination
             v-if="maxPages > 1"
@@ -25,20 +25,20 @@
 <script setup lang="ts">
 import {ref, computed, onMounted} from 'vue'
 import BasePagination from 'src/ui/BasePagination.vue'
-import ReportsListItem from 'components/ReportsListModule/ReportsListItem.vue'
-import ReportsListToolbar from 'components/ReportsListModule/ReportsListToolbar.vue'
+import ReportsListItem from './components/ReportsListItem.vue'
+import ReportsListToolbar from './components/ReportsListToolbar.vue'
 import {useReportsStore} from './ReportsStore'
 
 const reportsStore = useReportsStore()
 
-const currentPage = ref<number>(1)
-const itemsByPage = ref<number>(7)
-const maxPages = computed(() => Math.ceil(reportsStore.reportItems.length / itemsByPage.value))
-const displayedItemsFrom = computed(() => (currentPage.value - 1) * itemsByPage.value)
-const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.value)
-const setCurrentPage = (newValue: number) => {
-    currentPage.value = newValue
-}
+// const currentPage = ref<number>(1)
+// const itemsByPage = ref<number>(7)
+// const maxPages = computed(() => Math.ceil(reportsStore.reportItems.length / itemsByPage.value))
+// const displayedItemsFrom = computed(() => (currentPage.value - 1) * itemsByPage.value)
+// const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.value)
+// const setCurrentPage = (newValue: number) => {
+//     currentPage.value = newValue
+// }
 
 // onMounted(() => {
 //     reportsStore.getReportsList()
@@ -47,23 +47,23 @@ const setCurrentPage = (newValue: number) => {
 
 <style scoped lang="sass">
 .list
-  width: 1209rem
-  padding: 32rem 45rem 0 45rem
-
-  text-align: center
+  position: relative
 
 .list__toolbar
   display: flex
   margin-bottom: 44rem
 
 .list__items
-  min-height: 700rem
-  margin-bottom: 32rem
+  min-height: 663rem
+  width: 1051rem
+  position: absolute
+  right: 32rem
+  margin-bottom: 45rem
   display: grid
-  gap: 16rem
+  gap: 4rem
   align-content: start
 
 .list__pagination
-  margin-bottom: 32rem
-  float: right
+  position: absolute
+  bottom: 0
 </style>
