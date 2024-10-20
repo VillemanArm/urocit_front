@@ -1,7 +1,8 @@
 <template>
     <div class="list">
+        <h1>Отчеты</h1>
         <ReportsListToolbar />
-        <!-- <div class="list__items">
+        <div class="list__items">
             <ReportsListItem
                 v-for="reportItem in reportsStore.reportItems.slice(
                     displayedItemsFrom,
@@ -10,7 +11,7 @@
                 :reportItem="reportItem"
                 :key="reportItem.id"
             />
-        </div> -->
+        </div>
 
         <!-- <BasePagination
             v-if="maxPages > 1"
@@ -31,27 +32,23 @@ import {useReportsStore} from './ReportsStore'
 
 const reportsStore = useReportsStore()
 
-// const currentPage = ref<number>(1)
-// const itemsByPage = ref<number>(7)
-// const maxPages = computed(() => Math.ceil(reportsStore.reportItems.length / itemsByPage.value))
-// const displayedItemsFrom = computed(() => (currentPage.value - 1) * itemsByPage.value)
-// const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.value)
-// const setCurrentPage = (newValue: number) => {
-//     currentPage.value = newValue
-// }
+const currentPage = ref<number>(1)
+const itemsByPage = ref<number>(10)
+const maxPages = computed(() => Math.ceil(reportsStore.reportItems.length / itemsByPage.value))
+const displayedItemsFrom = computed(() => (currentPage.value - 1) * itemsByPage.value)
+const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.value)
+const setCurrentPage = (newValue: number) => {
+    currentPage.value = newValue
+}
 
-// onMounted(() => {
-//     reportsStore.getReportsList()
-// })
+onMounted(() => {
+    reportsStore.getReportsList()
+})
 </script>
 
 <style scoped lang="sass">
 .list
   position: relative
-
-.list__toolbar
-  display: flex
-  margin-bottom: 44rem
 
 .list__items
   min-height: 663rem

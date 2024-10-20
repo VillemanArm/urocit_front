@@ -40,28 +40,17 @@ const researchStore = useResearchStore()
   grid-template-columns: 120rem 240rem 380rem 1fr
   column-gap: 32rem
 
-  border-radius: 8rem
+  border-radius: 4rem
   border: 1px solid $border-color
   text-decoration: none
-
-  transition: all 0.3s ease-in-out
-
-  &:hover
-    border-color: $border-color
 
   & span
     align-self: center
     justify-self: start
-    display: inline-block
 
 .item__button
-  // width: 220rem
   padding: 8rem 16rem
   align-self: center
 
   font-size: 16rem
-
-  &>svg
-    width: 24rem
-    height: 24rem
 </style>
