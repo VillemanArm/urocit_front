@@ -154,6 +154,7 @@ const handleSaveAndStayClick = () => {
     newResearchForm.value.reset()
     researchStore.addNewResearch(newResearchData)
     researchStore.resetNewResearchData()
+    researchStore.getResearchList()
 }
 
 const handleResetClick = () => {
@@ -184,9 +185,6 @@ const handleResetClick = () => {
 
 .form__label
   color: $secondary-font-color
-
-
-
 
 .form__input-field
   height: 36rem

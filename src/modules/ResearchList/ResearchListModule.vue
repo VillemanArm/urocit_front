@@ -43,7 +43,7 @@ import {useResearchStore} from './ResearchStore'
 const researchStore = useResearchStore()
 
 const currentPage = ref<number>(1)
-const itemsByPage = ref<number>(7)
+const itemsByPage = ref<number>(10)
 const maxPages = computed(() => Math.ceil(researchStore.researchItems.length / itemsByPage.value))
 const displayedItemsFrom = computed(() => (currentPage.value - 1) * itemsByPage.value)
 const displayedItemsTo = computed(() => displayedItemsFrom.value + itemsByPage.value)
@@ -73,7 +73,7 @@ onMounted(() => {
   width: 1051rem
   position: absolute
   right: 32rem
-  margin-bottom: 32rem
+  margin-bottom: 45rem
   display: grid
   gap: 4rem
   align-content: start

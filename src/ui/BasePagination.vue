@@ -74,10 +74,10 @@ const handleClick = (pageNumber: number) => {
 
 <style scoped lang="sass">
 .pagination
-    height: 64rem
-    padding: 0 16rem
+    margin-bottom: 16rem
     display: flex
     align-items: center
+    gap: 4rem
 
 .pagination__button
     width: 32rem
@@ -90,6 +90,8 @@ const handleClick = (pageNumber: number) => {
     cursor: pointer
     color: $primary-font-color
     background-color: $background-color
+
+    transition: all 0.25s ease-in-out
 
     &:hover
         background-color: $secondary-color
@@ -113,8 +115,10 @@ const handleClick = (pageNumber: number) => {
     align-items: center
     justify-content: center
 
+    transition: all 0.25s ease-in-out
+
 .pagination__arrow_active:hover
-    background-color: $primary-color
+    background-color: $secondary-color
     cursor: pointer
     border-radius: 2rem
 
