@@ -90,14 +90,11 @@ const reportsStore = useReportsStore()
 
 .toolbar__wrap
   display: grid
-  grid-template-columns: 357rem 1fr
+  grid-template-columns: 325rem 1fr
   align-items: center
-
-.toolbar__add-button
-  margin-right: 48rem
+  justify-items: start
 
 .toolbar__download-reports
-  width: 236rem
   background-color: $secondary-color
 
   &:hover
