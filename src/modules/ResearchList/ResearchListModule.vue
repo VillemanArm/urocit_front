@@ -56,7 +56,6 @@ const handleModalCloseClick = () => {
     researchStore.isNewResearchForm = false
     researchStore.resetNewResearchData()
     researchStore.getResearchList()
-    // newResearchForm.value.reset()
 }
 
 onMounted(() => {

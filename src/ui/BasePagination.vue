@@ -53,8 +53,6 @@
 </template>
 
 <script setup lang="ts">
-import {reactive, ref, computed, onMounted, onUpdated, watch} from 'vue'
-//import {useRoute, useRouter} from 'vue-router'
 import LeftIcon from 'src/assets/icons/left-icon.vue'
 import RightIcon from 'src/assets/icons/right-icon.vue'
 

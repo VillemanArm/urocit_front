@@ -11,15 +11,15 @@
                 :reportItem="reportItem"
                 :key="reportItem.id"
             />
-        </div>
 
-        <!-- <BasePagination
-            v-if="maxPages > 1"
-            :maxPages="maxPages"
-            :currentPage="currentPage"
-            @changePage="(value) => setCurrentPage(value)"
-            class="list__pagination"
-        /> -->
+            <BasePagination
+                v-if="maxPages > 1"
+                :maxPage="maxPages"
+                :currentPage="currentPage"
+                @changePage="(value) => setCurrentPage(value)"
+                class="list__pagination"
+            />
+        </div>
     </div>
 </template>
 
