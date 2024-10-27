@@ -94,7 +94,7 @@ const reportsStore = useReportsStore()
   align-items: center
   justify-items: start
 
-.toolbar__download-reports
+:deep(.base-button).toolbar__download-reports
   background-color: $secondary-color
 
   &:hover

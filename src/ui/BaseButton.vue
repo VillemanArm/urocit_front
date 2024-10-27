@@ -38,7 +38,7 @@ defineProps<{
   transition: all 0.25s ease-in-out
 
   &:hover
-    background-color: $tretiary-color
+    background-color: $tertiary-color
 
   &>svg
     width: 24rem

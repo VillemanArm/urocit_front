@@ -4,7 +4,7 @@
             <div class="header__logo">
                 <img
                     src="~assets/img/logo.svg"
-                    alt="Demetramed"
+                    alt="Urocit"
                 />
             </div>
         </RouterLink>

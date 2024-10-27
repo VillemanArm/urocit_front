@@ -219,7 +219,7 @@ const handleResetClick = () => {
     cursor: pointer
 
     &:hover
-      background-color:$tretiary-color
+      background-color:$tertiary-color
 
 .form__buttons
   display: flex
